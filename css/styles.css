@@ -1,0 +1,42 @@
+@import url("http://fonts.cdnfonts.com/css/harry-potter");
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Shippori Antique B1", sans-serif;
+}
+.title-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: #3f4257;
+}
+
+.title-container img {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+.title-container h1 {
+  font-family: "Harry Potter", sans-serif;
+  color: #000;
+  font-size: 40px;
+}
+.card {
+  margin: 10px;
+  border: 2px solid #000;
+  height: 600px;
+}
+.card-img-top {
+  padding: 4px;
+  border-bottom: 2px solid #000;
+  height: 400px;
+}
+
+.characters-container {
+  display: flex;
+  flex-wrap: wrap;
+}
