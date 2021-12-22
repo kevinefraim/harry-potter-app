@@ -5,6 +5,8 @@ const imgCharacter = document.querySelector("#imgCharacter"); //Imagen del perso
 const cardContainer = document.querySelector("characterCards"); //Contenedor de las cards de personajes
 const charactersArr = []; //Array donde inserto los datos obtenidos de la API
 const btnTodos = document.querySelector("#btnTodos"); //Boton para mostar todos los personajes
+const btnInfo = document.querySelectorAll("#btnInfo"); //Boton de MAS INFO modal
+const modalInfo = document.querySelector("#modalInfo");
 
 //Funcion para mostrar personajes
 const showCharacters = (persona) => {
@@ -15,9 +17,8 @@ const showCharacters = (persona) => {
               <h5 class="card-title" id="characterName">${persona.personaje}</h5>
               <p class="card-text" id="casa">Casa: ${persona.casaDeHogwarts}</p>
               <p class="card-text" id="actor">Actor: ${persona.interpretado_por}</p>
-              <button type="button" class="btn btn-secondary">+Más Info</button>
+              <button type="button" class="btn btn-secondary" id="btnInfo" onclick="showModal()"> +Más Info </button>
               
-            </div>
           </div>
       `;
 };
@@ -55,7 +56,34 @@ const charactersFilter = (e) => {
   filtCharacters.map((character) => {
     showCharacters(character);
   });
+
   busqueda.value = "";
+};
+
+//Funcion de botón modal de más info
+
+//Funcion para cerrar el modal en onclick al boton cerrar
+const modalClose = () => {
+  modalInfo.classList.remove("d-block");
+};
+//Funcion para mostrar modal y agregar al HTML
+const showModal = () => {
+  modalInfo.classList.add("d-block");
+  charactersArr.map((character) => {
+    modalInfo.innerHTML = `
+   <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">TITULO</h5>
+            </div>
+            <div class="modal-body">sscscsc</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="closeModal" onclick="modalClose()"> Close </button>
+            </div>
+          </div>
+        </div> 
+  `;
+  });
 };
 
 //Eventos
